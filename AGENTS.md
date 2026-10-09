@@ -1,3 +1,5 @@
+Start with [docs/README.md](docs/README.md): which files to read for each task.
+
 ## Agent skills
 
 ### Issue tracker
