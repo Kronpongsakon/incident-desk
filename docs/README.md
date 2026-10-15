@@ -69,6 +69,7 @@ In `.agents/skills/` (linked into `.claude/skills/`).
 | [codebase-design](../.agents/skills/codebase-design/SKILL.md) | Module interfaces and seams |
 | [domain-modeling](../.agents/skills/domain-modeling/SKILL.md) | Glossary and ADRs |
 | [implement](../.agents/skills/implement/SKILL.md) | Build from a spec or tickets (user-invoked) |
+| [pr](../.agents/skills/pr/SKILL.md) | Write a PR body |
 | [tdd](../.agents/skills/tdd/SKILL.md) | Test-first features and fixes |
 | [to-tickets](../.agents/skills/to-tickets/SKILL.md) | Split a plan into tickets (user-invoked) |
 
