@@ -9,34 +9,16 @@ metadata:
     url: "https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md"
 ---
 
-Use this template for writing the PR body:
+Before writing, read these two files. They win over anything below:
 
-```markdown
-## Summary
-
-<diagram, diff-sketch, or tree>
-
-## Evidence
-
-- **Before:** <screenshot/output/failing test run>
-  **After:** <screenshot/output/passing test run>
-
-## Merge Danger
-
-**Door:** <one-way or two-way>
-
-<optional: description>
-
-**Blast Radius:** <one-word description>
-
-<optional: potential ramifications of merge>
-```
-
-## Sections
+1. `.github/pull_request_template.md`: the PR body. Use its sections, in its order, and remove its HTML comments.
+2. `docs/pull-requests.md`: the title format and what goes in each section.
 
 Skip all preambles and keep prose brief. Use the user's domain language from `GLOSSARY.md`.
 
-### Summary
+The notes below help fill in the template's sections.
+
+### Visuals for What Changed
 
 Pick the smallest view that makes the key point clear.
 
@@ -155,7 +137,7 @@ Place each visual next to the short text it supports. Keep only the calls, files
 
 You may use one of these, you may use several, it is unlikely you will use all of them. Use your judgement and don't overwhelm the user.
 
-### Evidence
+### Evidence for the Test Plan
 
 Concrete evidence that the change works. Show a before and after.
 
@@ -163,8 +145,8 @@ Screenshots are S-tier - when the environment is set up for it and the change is
 
 Execution-based evidence is A-tier. Test results, console output. Show the exact test that now fails and passes, using pseudocode.
 
-### Merge Danger
+### Risks / Notes
 
-Describe whether it's a one-way or two-way door. You can walk back through two-way doors, but not one-way doors. A PR that is cheap to roll back is lower risk. Changes that involve destructive actions or hard-to-reverse decisions are one-way doors.
+Say whether it's a one-way or two-way door. You can walk back through two-way doors, but not one-way doors. A PR that is cheap to roll back is lower risk. Changes that involve destructive actions or hard-to-reverse decisions are one-way doors.
 
-The blast radius is the potential impact or scope of the changes introduced by this PR. Consider all possibilities. Examples are layout shift, breakages for consumers, mobile responsiveness, etc.
+Name the blast radius: the potential impact or scope of the changes introduced by this PR. Consider all possibilities. Examples are layout shift, breakages for consumers, mobile responsiveness, etc.

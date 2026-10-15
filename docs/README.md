@@ -13,6 +13,7 @@ Start here. Paths are relative to this folder. Files marked *created later* do n
 | Create, read, or close issues | [agents/issue-tracker.md](agents/issue-tracker.md) |
 | Break a spec into tickets | [to-tickets skill](../.agents/skills/to-tickets/SKILL.md), [agents/issue-tracker.md](agents/issue-tracker.md) |
 | Implement a ticket | [implement skill](../.agents/skills/implement/SKILL.md), [tdd skill](../.agents/skills/tdd/SKILL.md), [requirements.md](requirements.md) |
+| Open a pull request | [pull-requests.md](pull-requests.md), [PR template](../.github/pull_request_template.md), [definition-of-done.md](definition-of-done.md) |
 | Review a change | [code-review skill](../.agents/skills/code-review/SKILL.md), [requirements.md](requirements.md), [definition-of-done.md](definition-of-done.md) |
 | Decide if a ticket is done | [definition-of-done.md](definition-of-done.md) |
 | Follow project coding rules | [.claude/rules/](../.claude/rules/) |
@@ -43,6 +44,7 @@ Start here. Paths are relative to this folder. Files marked *created later* do n
 | [requirements.md](requirements.md) | Roles, ticket fields, live updates, escalation job, out of scope |
 | [user-stories.md](user-stories.md) | Six user stories with acceptance criteria |
 | [definition-of-done.md](definition-of-done.md) | Checklist a ticket must pass before it is done |
+| [pull-requests.md](pull-requests.md) | How to write a PR title and description |
 | [agents/domain.md](agents/domain.md) | How agents use the glossary and ADRs |
 | [agents/issue-tracker.md](agents/issue-tracker.md) | GitHub Issues workflow with `gh` |
 
