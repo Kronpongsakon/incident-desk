@@ -85,6 +85,24 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
     assert_log_out_ends_session_for users(:agent)
   end
 
+  test "logging out from a stale tab and signing in again lands on the dashboard" do
+    sign_in_with users(:customer).email_address, "password"
+    users(:customer).sessions.destroy_all
+
+    delete session_path
+    assert_redirected_to new_session_path
+
+    sign_in_with users(:customer).email_address, "password"
+    assert_redirected_to root_url
+  end
+
+  test "signing in without a password shows the invalid credentials error" do
+    post session_path, params: { email_address: users(:customer).email_address }
+
+    assert_response :unprocessable_entity
+    assert_select ".alert-error", "Invalid email or password"
+  end
+
   private
     def assert_log_out_ends_session_for(user)
       sign_in_with user.email_address, "password"

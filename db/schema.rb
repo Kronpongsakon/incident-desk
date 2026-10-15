@@ -40,12 +40,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_15_082903) do
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
+    t.integer "user_id", null: false
+    t.integer "role_id", null: false
     t.index ["role_id"], name: "index_users_roles_on_role_id"
-    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", unique: true
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
   add_foreign_key "sessions", "users"
+  add_foreign_key "users_roles", "roles"
+  add_foreign_key "users_roles", "users"
 end
