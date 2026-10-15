@@ -15,11 +15,11 @@ Start here. Paths are relative to this folder. Files marked *created later* do n
 | Implement a ticket | [implement skill](../.agents/skills/implement/SKILL.md), [tdd skill](../.agents/skills/tdd/SKILL.md), [requirements.md](requirements.md) |
 | Review a change | [code-review skill](../.agents/skills/code-review/SKILL.md), [requirements.md](requirements.md), [definition-of-done.md](definition-of-done.md) |
 | Decide if a ticket is done | [definition-of-done.md](definition-of-done.md) |
-| Follow project coding rules | `.claude/rules/` (*created later*) |
+| Follow project coding rules | [.claude/rules/](../.claude/rules/) |
 
 ## How to read the rules
 
-`.claude/rules/` (*created later*) holds one Markdown file per rule topic.
+`.claude/rules/` holds one Markdown file per rule topic.
 
 1. List the folder (`ls .claude/rules`). If it is missing, there are no extra rules: continue.
 2. Read each file's frontmatter. A file with a `paths:` glob list applies only to files that match those globs. A file without `paths:` applies everywhere.
