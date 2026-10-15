@@ -25,6 +25,6 @@ class User < ApplicationRecord
   private
     def has_exactly_one_known_role
       names = roles.map(&:name)
-      errors.add(:roles, "must be either customer or agent") unless names.one? && ROLES.include?(names.first)
+      errors.add(:roles, "must be either #{ROLES.to_sentence(two_words_connector: " or ")}") unless names.one? && ROLES.include?(names.first)
     end
 end

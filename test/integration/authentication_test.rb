@@ -77,17 +77,25 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
     assert_select "header.topbar", count: 0
   end
 
-  test "logging out ends the session and the dashboard is unreachable afterwards" do
-    sign_in_with users(:customer).email_address, "password"
+  test "logging out ends a customer's session and the dashboard is unreachable afterwards" do
+    assert_log_out_ends_session_for users(:customer)
+  end
 
-    delete session_path
-
-    assert_redirected_to new_session_path
-    get root_path
-    assert_redirected_to new_session_path
+  test "logging out ends an agent's session and the dashboard is unreachable afterwards" do
+    assert_log_out_ends_session_for users(:agent)
   end
 
   private
+    def assert_log_out_ends_session_for(user)
+      sign_in_with user.email_address, "password"
+
+      delete session_path
+
+      assert_redirected_to new_session_path
+      get root_path
+      assert_redirected_to new_session_path
+    end
+
     def sign_in_with(email_address, password)
       post session_path, params: { email_address: email_address, password: password }
     end
